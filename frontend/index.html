@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cultura Pop - Álbum de Figurinhas Interativo</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@400;600;800&display=swap"
+        rel="stylesheet">
+    <!-- Style -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Theme Toggle -->
+    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Alternar tema">
+        <svg class="theme-icon" viewBox="0 0 24 24" width="24" height="24">
+            <path fill="currentColor" d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20V4Z" />
+        </svg>
+    </button>
+
+    <!-- Sound Control -->
+    <button id="sound-toggle" class="sound-btn" aria-label="Alternar som">
+        <svg class="sound-icon-on" viewBox="0 0 24 24" width="24" height="24">
+            <path fill="currentColor"
+                d="M14,3.23V5.29C16.89,6.15 19,8.83 19,12C19,15.17 16.89,17.85 14,18.71V20.77C18,19.86 21,16.28 21,12C21,7.72 18,4.14 14,3.23M16.5,12C16.5,10.23 15.5,8.71 14,7.97V16C15.5,15.29 16.5,13.77 16.5,12M3,9V15H7L12,20V4L7,9H3Z" />
+        </svg>
+        <svg class="sound-icon-off hidden" viewBox="0 0 24 24" width="24" height="24">
+            <path fill="currentColor"
+                d="M12,4L9.91,6.09L12,8.18M4.27,3L3,4.27L7.73,9H3V15H7L12,20V13.27L16.25,17.5C15.58,18 14.83,18.4 14,18.71V20.77C15.38,20.44 16.63,19.78 17.7,18.9L20.73,21.93L22,20.66L4.27,3M14,3.23V5.29C14.73,5.5 15.43,5.83 16.07,6.26L14.59,7.74C14.41,7.65 14.21,7.58 14,7.54V9.54L19,14.54C19,13.7 19,12.85 19,12C19,7.72 16,4.14 14,3.23M16.5,12C16.5,11.2 16.1,10.5 15.5,10.05L14,11.55V12.45L15.46,13.9C15.48,13.28 16.5,12.62 16.5,12Z" />
+        </svg>
+    </button>
+
+    <!-- Navigation Arrows -->
+    <button id="btn-prev" class="nav-btn nav-btn-left" aria-label="Página Anterior">
+        <svg viewBox="0 0 24 24" width="36" height="36">
+            <path fill="currentColor" d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
+        </svg>
+    </button>
+    <button id="btn-next" class="nav-btn nav-btn-right" aria-label="Próxima Página">
+        <svg viewBox="0 0 24 24" width="36" height="36">
+            <path fill="currentColor" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
+        </svg>
+    </button>
+
+    <!-- Album Container -->
+    <div class="album-viewport" id="album-viewport">
+        <div class="flip-book" id="book">
+
+            <!-- PAGINA 0: CAPA -->
+            <div class="page page-cover" data-density="hard">
+                <div class="page-content cover-content">
+                    <div class="cover-header">
+                        <span class="cover-seal">COLEÇÃO OFICIAL</span>
+                    </div>
+                    <div class="cover-body">
+                        <h1 class="cover-title glitch" data-text="CULTURA">CULTURA</h1>
+                        <h2 class="cover-subtitle glitch" data-text="POP">POP</h2>
+                        <div class="cover-art">
+                            <div class="art-grid"></div>
+
+                            <!-- Floating Mini Cards Silhouette Collage -->
+                            <div class="mini-card mc-turing">
+                                <div class="mc-avatar">🎸</div>
+                                <span class="mc-num">#01</span>
+                            </div>
+                            <div class="mini-card mc-guido">
+                                <div class="mc-avatar">🎬</div>
+                                <span class="mc-num">#13</span>
+                            </div>
+                            <div class="mini-card mc-jobs">
+                                <div class="mc-avatar">📺</div>
+                                <span class="mc-num">#27</span>
+                            </div>
+
+                            <!-- Central Glowing 3D Tech Sphere -->
+                            <div class="tech-sphere">
+                                <div class="sphere-core">
+                                    <svg class="art-logo" viewBox="0 0 24 24">
+                                        <path d="M12 2L2 22h20L12 2zm0 4l6.5 13h-13L12 6z" />
+                                    </svg>
+                                </div>
+                                <div class="sphere-ring ring-1"></div>
+                                <div class="sphere-ring ring-2"></div>
+                            </div>
+                        </div>
+                        <p class="cover-footer-text">LINHA DO TEMPO DA CULTURA POP</p>
+                    </div>
+                    <div class="cover-footer">
+                        <span>2026 IMERSÃO JULHO</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PAGINA 1: MUSICA INTERNACIONAL -->
+            <div class="page page-left">
+                <div class="page-content">
+                    <div class="page-header">
+                        <span class="tech-badge badge-ia">Música Internacional</span>
+                        <h3 class="page-title">Música Internacional</h3>
+                    </div>
+                    <div class="stickers-grid">
+                        <div class="sticker-slot">
+                            <div class="slot-number">#01</div>
+                            <div class="slot-name">The Beatles</div>
+                            <div class="slot-role">Os reis da invasão britânica nos anos 60.</div>
+                        </div>
+                        <div class="sticker-slot">
+                            <div class="slot-number">#02</div>
+                            <div class="slot-name">Michael Jackson</div>
+                            <div class="slot-role">O Rei do Pop que revolucionou os videoclipes nos anos 80.</div>
+                        </div>
+                        <div class="sticker-slot special-slot">
+                            <div class="slot-number">#03</div>
+                            <div class="slot-name">Freddie Mercury</div>
+                            <div class="slot-role">A voz lendária do Queen e o maior showman do rock. ✨</div>
+                        </div>
+                        <div class="sticker-slot">
+                            <div class="slot-number">#04</div>
+                            <div class="slot-name">Lady Gaga</div>
+                            <div class="slot-role">A rainha da ousadia e das performances conceituais a partir dos anos 2000.</div>
+                        </div>
+                        <div class="sticker-slot">
+                            <div class="slot-number">#05</div>
+                            <div class="slot-name">Beyoncé</div>
+                            <div class="slot-role">A maior diva e força criativa do pop moderno.</div>
+                        </div>
+                    </div>
+                    <div class="page-footer">Pág. 1</div>
+                </div>
+            </div>
+
+            <!-- PAGINA 2: MUSICA NACIONAL -->
+            <div class="page page-right">
+                <div class="page-content">
+                    <div class="page-header">
+                        <span class="tech-badge badge-python">Música Nacional</span>
+                        <h3 class="page-title">Música Nacional</h3>
+                    </div>
+                    <div class="stickers-grid">
+                        <div class="sticker-slot">
+                            <div class="slot-number">#06</div>
+                            <div class="slot-name">Elis Regina</div>
+                            <div class="slot-role">Uma das vozes mais potentes e viscerais da MPB.</div>
+                        </div>
+                        <div class="sticker-slot">
+                            <div class="slot-number">#07</div>
+                            <div class="slot-name">Jorge Ben Jor</div>
+                            <div class="slot-role">O mestre que uniu samba, funk e rock com simpatia.</div>
+                        </div>
+                        <div class="sticker-slot special-slot">
+                            <div class="slot-number">#08</div>
+                            <div class="slot-name">Tim Maia</div>
+                            <div class="slot-role">O 'síndico' do Brasil, trouxe a soul music e o funk americano. ✨</div>
+                        </div>
+                        <div class="sticker-slot">
+                            <div class="slot-number">#09</div>
+                            <div class="slot-name">Mamonas Assassinas</div>
+                            <div class="slot-role">O grupo que conquistou o país de forma meteórica com humor e rock.</div>
+                        </div>
+                        <div class="sticker-slot">
+                            <div class="slot-number">#10</div>
+                            <div class="slot-name">Ivete Sangalo</div>
+                            <div class="slot-role">A maior e mais carismática rainha do axé e do pop nacional.</div>
+                        </div>
+                    </div>
+                    <div class="page-footer">Pág. 2</div>
+                </div>
+            </div>
+
+            <!-- PAGINA 3: CINEMA INTERNACIONAL -->
+            <div class="page page-left">
+                <div class="page-content">
+                    <div class="page-header">
+                        <span class="tech-badge badge-db">Cinema Internacional</span>
+                        <h3 class="page-title">Cinema Internacional</h3>
+                    </div>
+                    <div class="stickers-grid">
+                        <div class="sticker-slot">
+                            <div class="slot-number">#11</div>
+                            <div class="slot-name">Tempos Modernos</div>
+                            <div class="slot-role">O clássico de Charlie Chaplin que critica a industrialização com muito humor e genialidade.</div>
+                        </div>
+                        <div class="sticker-slot">
+                            <div class="slot-number">#12</div>
+                            <div class="slot-name">Jurassic Park</div>
+                            <div class="slot-role">A revolucionária aventura de Steven Spielberg que trouxe os dinossauros de volta à vida.</div>
+                        </div>
+                        <div class="sticker-slot special-slot">
+                            <div class="slot-number">#13</div>
+                            <div class="slot-name">Star Wars</div>
+                            <div class="slot-role">A maior ópera espacial da história e um fenômeno eterno da cultura pop.</div>
+                        </div>
+                        <div class="sticker-slot">
+                            <div class="slot-number">#14</div>
+                            <div class="slot-name">Titanic</div>
+                            <div class="slot-role">O épico romance de James Cameron que se tornou uma das maiores bilheterias de todos os tempos.</div>
+                        </div>
+                        <div class="sticker-slot">
+                            <div class="slot-number">#15</div>
+                            <div class="slot-name">Pulp Fiction</div>
+                            <div class="slot-role">A aclamada obra-prima de Quentin Tarantino com diálogos icônicos e narrativa não-linear.</div>
+                        </div>
+                    </div>
+                    <div class="page-footer">Pág. 3</div>
+                </div>
+            </div>
+
+            <!-- PAGINA 4: CINEMA NACIONAL -->
+            <div class="page page-right">
+                <div class="page-content">
+                    <div class="page-header">
+                        <span class="tech-badge badge-os">Cinema Nacional</span>
+                        <h3 class="page-title">Cinema Nacional</h3>
+                    </div>
+                    <div class="stickers-grid">
+                        <div class="sticker-slot">
+                            <div class="slot-number">#16</div>
+                            <div class="slot-name">Tropa de Elite</div>
+                            <div class="slot-role">O impactante fenômeno policial brasileiro que marcou época com o Capitão Nascimento.</div>
+                        </div>
+                        <div class="sticker-slot">
+                            <div class="slot-number">#17</div>
+                            <div class="slot-name">Central do Brasil</div>
+                            <div class="slot-role">A emocionante e premiada jornada que levou o cinema brasileiro ao Oscar.</div>
+                        </div>
+                        <div class="sticker-slot special-slot">
+                            <div class="slot-number">#18</div>
+                            <div class="slot-name">Cidade de Deus</div>
+                            <div class="slot-role">O aclamado retrato das favelas cariocas indicado a 4 prêmios do Oscar. ✨</div>
+                        </div>
+                        <div class="sticker-slot">
+                            <div class="slot-number">#19</div>
+                            <div class="slot-name">O Auto da Compadecida</div>
+                            <div class="slot-role">A clássica e amada comédia nordestina baseada na obra de Ariano Suassuna.</div>
+                        </div>
+                        <div class="sticker-slot">
+                            <div class="slot-number">#20</div>
+                            <div class="slot-name">O Palhaço</div>
+                            <div class="slot-role">A sensível e aclamada história sobre vocação e identidade dirigida por Selton Mello.</div>
+                        </div>
+                    </div>
+                    <div class="page-footer">Pág. 4</div>
+                </div>
+            </div>
+
+            <!-- PAGINA 5: SERIES INTERNACIONAIS -->
+            <div class="page page-left">
+                <div class="page-content">
+                    <div class="page-header">
+                        <span class="tech-badge badge-brasil">Séries Internacionais</span>
+                        <h3 class="page-title">Séries Internacionais</h3>
+                    </div>
+                    <div class="stickers-grid">
+                        <div class="sticker-slot">
+                            <div class="slot-number">#21</div>
+                            <div class="slot-name">Friends</div>
+                            <div class="slot-role">A série de comédia sobre o grupo de amigos mais famosa do planeta.</div>
+                        </div>
+                        <div class="sticker-slot">
+                            <div class="slot-number">#22</div>
+                            <div class="slot-name">Breaking Bad</div>
+                            <div class="slot-role">O aclamado drama sobre o professor que vira império do crime.</div>
+                        </div>
+                        <div class="sticker-slot special-slot">
+                            <div class="slot-number">#23</div>
+                            <div class="slot-name">Game of Thrones</div>
+                            <div class="slot-role">O épico medieval que parava o mundo todos os domingos. ✨</div>
+                        </div>
+                        <div class="sticker-slot">
+                            <div class="slot-number">#24</div>
+                            <div class="slot-name">Stranger Things</div>
+                            <div class="slot-role">O grande fenômeno de suspense e nostalgia dos anos 80.</div>
+                        </div>
+                        <div class="sticker-slot">
+                            <div class="slot-number">#25</div>
+                            <div class="slot-name">Round 6</div>
+                            <div class="slot-role">O thriller de sobrevivência que se tornou a série mais assistida.</div>
+                        </div>
+                    </div>
+                    <div class="page-footer">Pág. 5</div>
+                </div>
+            </div>
+
+            <!-- PAGINA 6: SERIES NACIONAIS -->
+            <div class="page page-right">
+                <div class="page-content">
+                    <div class="page-header">
+                        <span class="tech-badge badge-brasil">Séries Nacionais</span>
+                        <h3 class="page-title">Séries Nacionais</h3>
+                    </div>
+                    <div class="stickers-grid">
+                        <div class="sticker-slot">
+                            <div class="slot-number">#26</div>
+                            <div class="slot-name">Castelo Rá-Tim-Bum</div>
+                            <div class="slot-role">O maior clássico infanto-juvenil da televisão brasileira.</div>
+                        </div>
+                        <div class="sticker-slot">
+                            <div class="slot-number">#27</div>
+                            <div class="slot-name">A Grande Família</div>
+                            <div class="slot-role">A sitcom de maior sucesso do Brasil, cheia de personagens inesquecíveis.</div>
+                        </div>
+                        <div class="sticker-slot special-slot">
+                            <div class="slot-number">#28</div>
+                            <div class="slot-name">Os Normais</div>
+                            <div class="slot-role">A comédia dos anos 2000 que acompanhava Rui e Vani. ✨</div>
+                        </div>
+                        <div class="sticker-slot">
+                            <div class="slot-number">#29</div>
+                            <div class="slot-name">Sai de Baixo</div>
+                            <div class="slot-role">O humorístico gravado ao vivo em teatro que marcou época.</div>
+                        </div>
+                        <div class="sticker-slot">
+                            <div class="slot-number">#30</div>
+                            <div class="slot-name">Você</div>
+                            <div class="slot-role">O seu slot personalizado para carimbar sua foto no álbum!</div>
+                        </div>
+                    </div>
+                    <div class="page-footer">Pág. 6</div>
+                </div>
+            </div>
+
+            <!-- PAGINA 7: CONTRACAPA -->
+            <div class="page page-cover-back" data-density="hard">
+                <div class="page-content cover-back-content">
+                    <div class="cover-back-header">
+                        <h2>CULTURA POP</h2>
+                    </div>
+                    <div class="cover-back-body">
+                        <div class="tech-logo-collage">
+                            <span>MÚSICA</span> • <span>CINEMA</span> • <span>SÉRIES</span>
+                        </div>
+                        <p class="summary-text">
+                            O Cultura Pop Album é um tributo interativo à história e evolução do entretenimento.
+                            Juntando os maiores ícones da música, cinema e séries nacionais e internacionais que moldam nossa cultura.
+                        </p>
+                        <div class="barcode-container">
+                            <div class="barcode">
+                                <!-- Simulated barcode lines -->
+                                <div class="bar"></div>
+                                <div class="bar thin"></div>
+                                <div class="bar"></div>
+                                <div class="bar thick"></div>
+                                <div class="bar thin"></div>
+                                <div class="bar"></div>
+                                <div class="bar thick"></div>
+                                <div class="bar"></div>
+                                <div class="bar thin"></div>
+                                <div class="bar thick"></div>
+                            </div>
+                            <span class="barcode-number">9 788575 228494</span>
+                        </div>
+                    </div>
+                    <div class="cover-back-footer">
+                        <span>Imersão Julho • Alura • 2026</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Page Flip Library -->
+    <script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.min.js"></script>
+    <!-- Logic -->
+    <script src="app.js"></script>
+</body>
+
+</html>
